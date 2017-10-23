@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <service uuid="1800">
+      <description>Generic Access Profile</description>
+
+      <characteristic uuid="2a00">
+        <properties read="true" const="true" />
+        <value>IrDA Tranciever</value>
+      </characteristic>
+
+      <characteristic uuid="2a01">
+        <properties read="true" const="true" />
+        <value type="hex">03C0</value>
+      </characteristic>
+    </service>
+<!--
+	<service uuid="1812" id="HIDService" advertise="true">
+		<description>HID Service</description>
+		
+		<characteristic uuid="2a4d">
+			<description>Input Report</description>
+			<properties read="true" notify="true"/>
+			<value type="hex" length="250" variable_length="true"/>
+		</characteristic>
+		
+		<characteristic uuid="2a4d">
+			<description>Output Report</description>
+			<properties read="true" write="true" write_no_response="true"/>
+			<value type="hex" length="250" variable_length="true"/>
+		</characteristic>
+		
+		<characteristic uuid="2a4d">
+			<description>Error Report</description>
+			<properties write="true" notify="true"/>
+			<value type="hex" length="5" variable_length="true"/>
+		</characteristic>
+		
+		<characteristic uuid="2a4b">
+			<description>Report Map</description>
+	</service>
+-->
+
+	<service uuid="73e22652-55de-4339-950c-78a0d8aba637" id="servCommand" advertise="true">
+		<description>Command Service</description>	
+		<characteristic uuid="d40c53c0-4462-4714-99cc-f90772bd7f61" id="charCommandData">
+			<description>Command Data</description>
+			<properties read="true" write="true"/>
+			<value type="hex" length="250" variable_length="true"/>
+		</characteristic>
+		
+		<characteristic uuid="54d8deac-1c1d-4841-947f-ac4406f3034e" id="charRespData">
+			<description>Response Data</description>
+			<properties read="true" write="true" notify="true"/>
+			<value type="hex" length="250" variable_length="true"/>
+		</characteristic>
+		
+		<characteristic uuid="c29a164e-9406-4d81-800b-29efcb447933" id="charError">
+			<description>Error</description>
+			<properties read="true" write="true" notify="true"/>
+			<value type="hex" length="5" variable_length="true"/>
+		</characteristic>
+	</service>
+</configuration>
+
+<!--  UUIDs, Cut and Paste
+4eb19398-c4d1-409c-afac-81b2a1a24736
+88299336-1091-410d-851c-97079b6cdaed
+f7672434-249a-422a-9c33-45ea0e8e9f61
+2d22bb49-bede-48c4-90a0-2f57817f2905
+3a361012-870a-44e6-a7e0-fb938f39825b
+055f9bb8-7d04-4270-a072-379f4cd1a7fe
+2a078d19-6e48-418d-ad6a-6ecd327bcf32
+dc9b9105-be64-4d00-abc7-55f5bc9c2dbf
+1ecf50d2-63f0-4f87-bf91-84257c890ae6
+ed8684ab-9e2c-405d-a0c0-39d49c6c12b1
+059ce388-00a7-4c14-8dde-f4f7bd8af1bf
+8fe2c618-7971-4eee-8f8c-a8b49a58e4ac
+67eda2a0-8e7b-4a2c-88df-06b90cf8627d
+a6524524-63d8-4907-a7c2-35baf717bf1d
+2212219c-8086-4faa-97cf-354250c99f25
+44d62ce6-83f6-45ac-acb0-7fe54507a511
+
+-->
